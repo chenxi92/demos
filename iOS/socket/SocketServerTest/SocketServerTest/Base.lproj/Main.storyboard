@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="disconnect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMS-YP-2Ai" userLabel="statusLabel">
+                                <rect key="frame" x="30" y="94" width="354" height="40"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jMo-ue-Xf9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0U7-Xm-1vB">
+                                <rect key="frame" x="30" y="214" width="135" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="Go0-qS-YOI"/>
+                                    <constraint firstAttribute="height" constant="40" id="JKU-fD-Sgs"/>
+                                </constraints>
+                                <state key="normal" title="create">
+                                    <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="create:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZEH-eD-u1G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaI-gj-1tx">
+                                <rect key="frame" x="249" y="214" width="135" height="40"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="XFo-nA-7eF"/>
+                                    <constraint firstAttribute="width" constant="135" id="rl6-0Z-AfF"/>
+                                </constraints>
+                                <state key="normal" title="send">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="send:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jti-Ns-HtY"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3dE-jM-dNo" userLabel="logTextView">
+                                <rect key="frame" x="30" y="294" width="354" height="518"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="please input message here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcr-U9-hEX">
+                                <rect key="frame" x="30" y="154" width="354" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="cUN-IM-tUd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dcr-U9-hEX" secondAttribute="trailing" constant="30" id="0OV-OP-nSk"/>
+                            <constraint firstItem="dcr-U9-hEX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="1GE-Ex-jAR"/>
+                            <constraint firstItem="pMS-YP-2Ai" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="70h-MX-czf"/>
+                            <constraint firstItem="dcr-U9-hEX" firstAttribute="top" secondItem="pMS-YP-2Ai" secondAttribute="bottom" constant="20" id="8yz-UJ-z9z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pMS-YP-2Ai" secondAttribute="trailing" constant="30" id="B1J-oc-dLh"/>
+                            <constraint firstItem="0U7-Xm-1vB" firstAttribute="top" secondItem="dcr-U9-hEX" secondAttribute="bottom" constant="25" id="Q6Q-ik-8eY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3dE-jM-dNo" secondAttribute="trailing" constant="30" id="SUu-EK-jiz"/>
+                            <constraint firstItem="pMS-YP-2Ai" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="cDN-fo-xxC"/>
+                            <constraint firstItem="0U7-Xm-1vB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="elU-5V-fvG"/>
+                            <constraint firstItem="TaI-gj-1tx" firstAttribute="top" secondItem="dcr-U9-hEX" secondAttribute="bottom" constant="25" id="iYi-dR-MO8"/>
+                            <constraint firstItem="3dE-jM-dNo" firstAttribute="top" secondItem="0U7-Xm-1vB" secondAttribute="bottom" constant="40" id="iyT-zi-v2y"/>
+                            <constraint firstItem="3dE-jM-dNo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="pSe-Es-CP9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3dE-jM-dNo" secondAttribute="bottom" constant="50" id="sW3-aV-T9Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TaI-gj-1tx" secondAttribute="trailing" constant="30" id="wgV-B5-1mJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="dcr-U9-hEX" id="Z9r-Dd-tv5"/>
+                        <outlet property="logTextView" destination="3dE-jM-dNo" id="Xsd-Vw-be2"/>
+                        <outlet property="statusLabel" destination="pMS-YP-2Ai" id="9rY-c4-V99"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
