@@ -1,9 +1,10 @@
 # demos
+
 practice demos
 
 ### iOS
 
-[Auto Layout](./iOS/Auto Layout)
+[AutoLayout](./iOS/AutoLayout)
 
 [Block](./iOS/BlockChain)
 
