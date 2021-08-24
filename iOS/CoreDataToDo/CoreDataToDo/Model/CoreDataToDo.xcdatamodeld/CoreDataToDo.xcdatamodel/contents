@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ToDo" representedClassName=".ToDo" syncable="YES">
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="todoDescription" attributeType="String"/>
+        <attribute name="todoImage" optional="YES" attributeType="Binary"/>
+        <attribute name="todoName" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="ToDo" positionX="-63" positionY="-18" width="128" height="89"/>
+    </elements>
+</model>
