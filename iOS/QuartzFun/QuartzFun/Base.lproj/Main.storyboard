@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuartzFun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="QuartzFunView" customModule="QuartzFun" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o6k-vg-ZRN">
+                                <rect key="frame" x="32.5" y="84" width="349" height="32"/>
+                                <segments>
+                                    <segment title="Red"/>
+                                    <segment title="Blue"/>
+                                    <segment title="Yellow"/>
+                                    <segment title="Green"/>
+                                    <segment title="Random"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeColor:" destination="BYZ-38-t0r" eventType="valueChanged" id="Pm5-UB-iz5"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vVI-cT-nJv">
+                                <rect key="frame" x="75.5" y="786" width="263" height="32"/>
+                                <segments>
+                                    <segment title="Line"/>
+                                    <segment title="Second"/>
+                                    <segment title="Ellipse"/>
+                                    <segment title="Image"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeShape:" destination="BYZ-38-t0r" eventType="valueChanged" id="t4H-th-IgM"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="o6k-vg-ZRN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="0Tq-y4-B1j"/>
+                            <constraint firstItem="o6k-vg-ZRN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CWh-3y-Nfu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vVI-cT-nJv" secondAttribute="bottom" constant="45" id="NbZ-aj-JON"/>
+                            <constraint firstItem="vVI-cT-nJv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Qlv-0D-xaW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorController" destination="o6k-vg-ZRN" id="D5a-o8-t6X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="75.669642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
