@@ -30,10 +30,10 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vVI-cT-nJv">
-                                <rect key="frame" x="75.5" y="786" width="263" height="32"/>
+                                <rect key="frame" x="87.5" y="786" width="239" height="32"/>
                                 <segments>
                                     <segment title="Line"/>
-                                    <segment title="Second"/>
+                                    <segment title="Rect"/>
                                     <segment title="Ellipse"/>
                                     <segment title="Image"/>
                                 </segments>
