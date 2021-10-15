@@ -66,3 +66,12 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+
+# vue
+node_modules
+.DS_Store
+.temp
+.cache
+dist
+package-lock.json
