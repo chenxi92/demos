@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151670802728424B00D4A836 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1516707F2728424B00D4A836 /* Cardify.swift */; };
 		6C5449E82727936500D79A53 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5449E72727936500D79A53 /* AspectVGrid.swift */; };
 		6C5449ED2728058B00D79A53 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6C5449EC2728058B00D79A53 /* README.md */; };
 		6C5449F027280A4300D79A53 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5449EF27280A4300D79A53 /* Pie.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1516707F2728424B00D4A836 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		6C5449E72727936500D79A53 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 		6C5449EC2728058B00D79A53 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6C5449EF27280A4300D79A53 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				6C5449E72727936500D79A53 /* AspectVGrid.swift */,
 				6CC8136A272665B8009F6B6B /* EmojiMemoryGameView.swift */,
 				6C5449EF27280A4300D79A53 /* Pie.swift */,
+				1516707F2728424B00D4A836 /* Cardify.swift */,
 				6CC81378272665D6009F6B6B /* EmojiMemoryGame.swift */,
 				6CC8137B272665ED009F6B6B /* MemoryGame.swift */,
 				6CC81368272665B8009F6B6B /* MemorizeApp.swift */,
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C5449F027280A4300D79A53 /* Pie.swift in Sources */,
+				151670802728424B00D4A836 /* Cardify.swift in Sources */,
 				6CC8136B272665B8009F6B6B /* EmojiMemoryGameView.swift in Sources */,
 				6CC81369272665B8009F6B6B /* MemorizeApp.swift in Sources */,
 				6CC8137C272665ED009F6B6B /* MemoryGame.swift in Sources */,
