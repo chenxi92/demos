@@ -48,6 +48,7 @@
 		6C00714F272FF95A00C10282 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF251B272F960200D8146B /* ModelData.swift */; };
 		6C007150272FF95A00C10282 /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF2522272F987900D8146B /* LandmarkRow.swift */; };
 		6C007155272FF9FE00C10282 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C007154272FF9FE00C10282 /* LandmarkDetail.swift */; };
+		6C0071692730DF1A00C10282 /* LandmarkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0071682730DF1A00C10282 /* LandmarkSettings.swift */; };
 		6CC57653272FCF1700672782 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC57652272FCF1700672782 /* CategoryRow.swift */; };
 		6CC57656272FD14F00672782 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC57655272FD14F00672782 /* CategoryItem.swift */; };
 		6CC57659272FD56800672782 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC57658272FD56800672782 /* Profile.swift */; };
@@ -150,6 +151,7 @@
 		6C00712F272FF7D400C10282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C007130272FF7D400C10282 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		6C007154272FF9FE00C10282 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
+		6C0071682730DF1A00C10282 /* LandmarkSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkSettings.swift; sourceTree = "<group>"; };
 		6CC57652272FCF1700672782 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		6CC57655272FD14F00672782 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
 		6CC57658272FD56800672782 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				154EB82F27302E1F00FC461A /* LandmarkCommands.swift */,
+				6C0071682730DF1A00C10282 /* LandmarkSettings.swift */,
 				159840F327301FBE00F6AC4A /* ContentView.swift */,
 				1598410B2730221D00F6AC4A /* LandmarkDetail.swift */,
 				159840F527301FC000F6AC4A /* Assets.xcassets */,
@@ -594,6 +597,7 @@
 			files = (
 				15984107273020CB00F6AC4A /* LandmarkApp.swift in Sources */,
 				15984109273020CB00F6AC4A /* LandmarkList.swift in Sources */,
+				6C0071692730DF1A00C10282 /* LandmarkSettings.swift in Sources */,
 				15984103273020CB00F6AC4A /* Hike.swift in Sources */,
 				159840F427301FBE00F6AC4A /* ContentView.swift in Sources */,
 				154EB83127302E1F00FC461A /* LandmarkCommands.swift in Sources */,
@@ -703,7 +707,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = chenxi.MacLandmarks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -731,7 +735,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = chenxi.MacLandmarks;
 				PRODUCT_NAME = "$(TARGET_NAME)";

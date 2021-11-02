@@ -16,50 +16,64 @@ struct LandmarkDetail: View {
         modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
     }
     
+    var map: some View {
+        ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
+            MapView(coordinate: landmark.locationCoordinate)
+                .ignoresSafeArea(edges: .top)
+                .frame(height: 300)
+
+            Button("Open in Maps") {
+                let destination = MKMapItem(
+                    placemark: MKPlacemark(coordinate: landmark.locationCoordinate)
+                )
+                destination.name = landmark.name
+                destination.openInMaps()
+            }
+            .padding()
+        }
+    }
+    
+    var title: some View {
+        HStack(spacing: 24) {
+            CircleImage(image: landmark.image.resizable())
+                .frame(width: 160, height: 160)
+            
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(landmark.name)
+                        .font(.title)
+                        .foregroundColor(.primary)
+                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
+                        .buttonStyle(PlainButtonStyle())
+                }
+                
+                VStack(alignment: .leading) {
+                    Text(landmark.park)
+                    Text(landmark.state)
+                }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            }
+        }
+    }
+    
+    var detail: some View {
+        VStack(alignment: .leading, spacing: 20) {
+            
+            title
+            
+            Divider()
+            
+            Text("About \(landmark.name)")
+                .font(.title2)
+            Text(landmark.description)
+        }
+    }
+    
     var body: some View {
         ScrollView {
-            ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
-                MapView(coordinate: landmark.locationCoordinate)
-                    .ignoresSafeArea(edges: .top)
-                    .frame(height: 300)
-
-                Button("Open in Maps") {
-                    let destination = MKMapItem(placemark: MKPlacemark(coordinate: landmark.locationCoordinate))
-                    destination.name = landmark.name
-                    destination.openInMaps()
-                }
-                .padding()
-            }
-            
-            VStack(alignment: .leading, spacing: 20) {
-                HStack(spacing: 24) {
-                    CircleImage(image: landmark.image.resizable())
-                        .frame(width: 160, height: 160)
-                    
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(landmark.name)
-                                .font(.title)
-                                .foregroundColor(.primary)
-                            FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
-                                .buttonStyle(PlainButtonStyle())
-                        }
-                        
-                        VStack(alignment: .leading) {
-                            Text(landmark.park)
-                            Text(landmark.state)
-                        }
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    }
-                }
-                
-                Divider()
-                
-                Text("About \(landmark.name)")
-                    .font(.title2)
-                Text(landmark.description)
-            }
+            map
+            detail
             .padding()
             .frame(maxWidth: 700)
             .offset(y: -50)
