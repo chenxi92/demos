@@ -44,12 +44,19 @@ struct BadgeBackground: View {
                     )
                 }
             }
-            .fill(LinearGradient(
+            .badgeBackgroundStyle()
+        }
+        .aspectRatio(contentMode: .fit)
+    }
+}
+
+extension Path {
+    
+    func badgeBackgroundStyle() -> some View {
+        self.fill(LinearGradient(
                     gradient: Gradient(colors: [Self.gradientStart, Self.gradientEnd]),
                     startPoint: UnitPoint(x: 0.5, y: 0),
                     endPoint: UnitPoint(x: 0.5, y: 0.6)))
-        }
-        .aspectRatio(contentMode: .fit)
     }
     
     static let gradientStart = Color(red: 239.0 / 255, green: 120.0 / 255, blue: 221 / 255)

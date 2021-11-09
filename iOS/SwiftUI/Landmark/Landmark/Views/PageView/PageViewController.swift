@@ -15,7 +15,7 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
     // MARK: - UIViewControllerRepresentable
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(pageViewController: self)
     }
     
     func makeUIViewController(context: Context) -> UIPageViewController {
@@ -40,7 +40,7 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
         var parent: PageViewController
         var controllers = [UIViewController]()
         
-        init(_ pageViewController: PageViewController) {
+        init(pageViewController: PageViewController) {
             parent = pageViewController
             controllers = parent.pages.map { UIHostingController(rootView: $0) }
         }
