@@ -47,7 +47,7 @@ class PaletteStore: ObservableObject {
     init(named name: String) {
         self.name = name
         restoreFromUserDefaults()
-        
+        print("restore palettes: \(palettes)")
         if palettes.isEmpty {
             
             insertPalette(named: "Vehicles", emojis: "🚙🚗🚘🚕🚖🏎🚚🛻🚛🚐🚓🚔🚑🚒🚀✈️🛫🛬🛩🚁🛸🚲🏍🛶⛵️🚤🛥🛳⛴🚢🚂🚝🚅🚆🚊🚉🚇🛺🚜")
