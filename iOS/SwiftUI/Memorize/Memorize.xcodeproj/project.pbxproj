@@ -45,6 +45,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		158C11FB273B3A9C00D72DBC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6CC8136A272665B8009F6B6B /* EmojiMemoryGameView.swift */,
+				6C5449E72727936500D79A53 /* AspectVGrid.swift */,
+				6C5449EF27280A4300D79A53 /* Pie.swift */,
+				1516707F2728424B00D4A836 /* Cardify.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		158C11FC273B3ACD00D72DBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CC81378272665D6009F6B6B /* EmojiMemoryGame.swift */,
+				6CC8137B272665ED009F6B6B /* MemoryGame.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6CC8135C272665B8009F6B6B = {
 			isa = PBXGroup;
 			children = (
@@ -66,13 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				6CC81371272665BB009F6B6B /* Info.plist */,
-				6C5449E72727936500D79A53 /* AspectVGrid.swift */,
-				6CC8136A272665B8009F6B6B /* EmojiMemoryGameView.swift */,
-				6C5449EF27280A4300D79A53 /* Pie.swift */,
-				1516707F2728424B00D4A836 /* Cardify.swift */,
-				6CC81378272665D6009F6B6B /* EmojiMemoryGame.swift */,
-				6CC8137B272665ED009F6B6B /* MemoryGame.swift */,
 				6CC81368272665B8009F6B6B /* MemorizeApp.swift */,
+				158C11FB273B3A9C00D72DBC /* View */,
+				158C11FC273B3ACD00D72DBC /* Model */,
 				6CC8136C272665BB009F6B6B /* Assets.xcassets */,
 				6CC8136E272665BB009F6B6B /* Preview Content */,
 			);
