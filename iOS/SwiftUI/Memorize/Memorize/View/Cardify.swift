@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Cardify: AnimatableModifier {
     
+    var rotation: Double
+    
     init(isFaceUp: Bool) {
         rotation = isFaceUp ? 0 : 180
     }
@@ -17,8 +19,6 @@ struct Cardify: AnimatableModifier {
         get { rotation }
         set { rotation = newValue }
     }
-    
-    var rotation: Double
     
     func body(content: Content) -> some View {
         ZStack {

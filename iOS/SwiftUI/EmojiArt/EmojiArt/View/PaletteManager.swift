@@ -45,6 +45,7 @@ struct PaletteManager: View {
             }
             .navigationTitle("Manage Palettes")
             .navigationBarTitleDisplayMode(.inline)
+            .dismissable { presentationMode.wrappedValue.dismiss() }
             // add an EditButton on the trailing side of our NavigationView
             // and a Close button on the leading side
             // notice we are adding this .toolbar to the list
@@ -53,14 +54,6 @@ struct PaletteManager: View {
             // (ditto title and titleddisplaymode above)
             .toolbar {
                 ToolbarItem { EditButton() }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    if presentationMode.wrappedValue.isPresented,
-                       UIDevice.current.userInterfaceIdiom != .pad {
-                        Button("Close") {
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                    }
-                }
             }
             .environment(\.editMode, $editMode)
         }
