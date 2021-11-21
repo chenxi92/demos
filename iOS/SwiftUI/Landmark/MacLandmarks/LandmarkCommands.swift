@@ -12,7 +12,7 @@ struct LandmarkCommands: Commands {
         @FocusedBinding(\.selectedLandmark) var selectedLandmark
 
         var body: some View {
-            Button("\(selectedLandmark?.isFavorite == true ? "Remove" : "Mark") as Favorite") {
+            Button((selectedLandmark?.isFavorite == true ? "Remove" : "Mark") + " as Favorite") {
                 selectedLandmark?.isFavorite.toggle()
             }
             .keyboardShortcut("f", modifiers: [.shift, .option])

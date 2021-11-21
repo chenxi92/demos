@@ -13,7 +13,7 @@ struct PageControl: UIViewRepresentable {
     @Binding var currentPage: Int
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(control: self)
     }
     
     // MARK: - UIViewRepresentable
@@ -37,7 +37,7 @@ struct PageControl: UIViewRepresentable {
     class Coordinator: NSObject {
         var control: PageControl
         
-        init(_ control: PageControl) {
+        init(control: PageControl) {
             self.control = control
         }
         

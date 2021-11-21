@@ -51,28 +51,33 @@ struct LandmarkList: View {
             .navigationTitle(title)
             .frame(minWidth: 300)
             .toolbar {
-                ToolbarItem {
-                    Menu {
-                        Picker("Category", selection: $filter) {
-                            ForEach(FilterCategory.allCases) { category in
-                                Text(category.rawValue).tag(category)
-                            }
-                        }
-                        .pickerStyle(InlinePickerStyle())
-                        
-                        Toggle(isOn: $showFavoritesOnly) {
-                            Label("Favorites only", systemImage: "star.fill")
-                        }
-                    } label: {
-                        Label("Filter", systemImage: "slider.horizontal.3")
-                    }
-                }
+                myToolBarItem
             }
             
             Text("Select a Landmark")
         }
         .focusedValue(\.selectedLandmark, $modelData.landmarks[index ?? 0])
     }
+    
+    var myToolBarItem: some ToolbarContent {
+        ToolbarItem {
+            Menu {
+                Picker("Category", selection: $filter) {
+                    ForEach(FilterCategory.allCases) { category in
+                        Text(category.rawValue).tag(category)
+                    }
+                }
+                .pickerStyle(InlinePickerStyle())
+                
+                Toggle(isOn: $showFavoritesOnly) {
+                    Label("Favorites only", systemImage: "star.fill")
+                }
+            } label: {
+                Label("Filter", systemImage: "slider.horizontal.3")
+            }
+        }
+    }
+    
 }
 
 struct LandmarkList_Previews: PreviewProvider {
