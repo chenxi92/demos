@@ -35,7 +35,7 @@ struct ContentView: View {
                     .navigationBarTitleDisplayMode(.inline)
             } label: {
                 Text("Refund")
-                    .disabled(store.purchasedTransaction.isEmpty)
+                    .opacity(store.purchasedTransaction.isEmpty ? 0 : 1.0)
             }
         }
         
@@ -47,7 +47,7 @@ struct ContentView: View {
                     .navigationBarTitleDisplayMode(.inline)
             } label: {
                 Text("History")
-                    .disabled(store.historyTransaction.isEmpty)
+                    .opacity(store.historyTransaction.isEmpty ? 0 : 1.0)
             }
         }
     }
