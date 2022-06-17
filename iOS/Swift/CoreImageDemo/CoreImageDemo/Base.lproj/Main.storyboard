@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j0Q-Xk-MFn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreImageDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="VUG-G4-lNK">
+                                <rect key="frame" x="16" y="108" width="382" height="212"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VUG-G4-lNK" secondAttribute="height" multiplier="384:213" id="TJL-wS-04f"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="uX6-sG-pqQ" userLabel="Slider">
+                                <rect key="frame" x="14" y="336" width="386" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="SK6-YD-X73"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VUG-G4-lNK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8eV-b4-sOr"/>
+                            <constraint firstItem="VUG-G4-lNK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="GBk-5w-ZMV"/>
+                            <constraint firstItem="uX6-sG-pqQ" firstAttribute="trailing" secondItem="VUG-G4-lNK" secondAttribute="trailing" id="MnK-XU-aIA"/>
+                            <constraint firstItem="VUG-G4-lNK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bq1-nY-X8U"/>
+                            <constraint firstItem="uX6-sG-pqQ" firstAttribute="leading" secondItem="VUG-G4-lNK" secondAttribute="leading" id="gqb-V8-YTI"/>
+                            <constraint firstItem="uX6-sG-pqQ" firstAttribute="top" secondItem="VUG-G4-lNK" secondAttribute="bottom" constant="16" id="l2j-uN-kZY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xwr-V9-NDY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Bqm-kJ-eGB" userLabel="Right Bar Button Items">
+                            <connections>
+                                <action selector="loadPhoto:" destination="BYZ-38-t0r" id="WUS-C4-stZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="VUG-G4-lNK" id="Zjs-uL-ukT"/>
+                        <outlet property="slider" destination="uX6-sG-pqQ" id="Yjc-4R-L9f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="-615"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bfJ-66-o8T">
+            <objects>
+                <navigationController id="j0Q-Xk-MFn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q11-MD-slm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Z7S-lI-tUK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXm-fP-bsJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-432" y="-615"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image" width="320" height="213"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
