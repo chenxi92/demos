@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C20CE0D285C8A530040176B /* CoreImageCustomFilterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE0C285C8A530040176B /* CoreImageCustomFilterApp.swift */; };
+		6C20CE0F285C8A530040176B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE0E285C8A530040176B /* ContentView.swift */; };
+		6C20CE11285C8A540040176B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C20CE10285C8A540040176B /* Assets.xcassets */; };
+		6C20CE14285C8A540040176B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C20CE13285C8A540040176B /* Preview Assets.xcassets */; };
+		6C20CE1E285C8B920040176B /* Painting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE1D285C8B920040176B /* Painting.swift */; };
+		6C20CE20285C8BCC0040176B /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE1F285C8BCC0040176B /* Gallery.swift */; };
+		6C20CE22285C8C430040176B /* paintings.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C20CE21285C8C430040176B /* paintings.json */; };
+		6C20CE24285C8CA10040176B /* FilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE23285C8CA10040176B /* FilterListView.swift */; };
+		6C20CE26285C8CD60040176B /* FilterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE25285C8CD60040176B /* FilterDetailView.swift */; };
+		6C20CE28285C8CDE0040176B /* PaintingWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE27285C8CDE0040176B /* PaintingWall.swift */; };
+		6C20CE2A286010C60040176B /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE29286010C60040176B /* ImageProcessor.swift */; };
+		6C20CE3428601F150040176B /* ColorFilterKernel.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE3328601F150040176B /* ColorFilterKernel.ci.metal */; };
+		6C20CE3628601FBE0040176B /* ColorFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE3528601FBE0040176B /* ColorFilter.swift */; };
+		6C20CE38286023050040176B /* WarpFilterKernel.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE37286023050040176B /* WarpFilterKernel.ci.metal */; };
+		6C20CE3A286023E40040176B /* WarpFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE39286023E40040176B /* WarpFilter.swift */; };
+		6C20CE3C286025A30040176B /* BlendFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20CE3B286025A30040176B /* BlendFilter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		6C20CE3128601AC80040176B /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.ci.metal";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/${INPUT_FILE_BASE}.air",
+			);
+			runOncePerArchitecture = 0;
+			script = "# Type a script or drag a script file from your workspace to insert its path.\nxcrun metal -c -fcikernel \"${INPUT_FILE_PATH}\" \\\n  -o \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+		};
+		6C20CE3228601B0A0040176B /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.ci.air";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(METAL_LIBRARY_OUTPUT_DIR)/$(INPUT_FILE_BASE).metallib",
+			);
+			runOncePerArchitecture = 0;
+			script = "# Type a script or drag a script file from your workspace to insert its path.\nxcrun metallib -cikernel \"${INPUT_FILE_PATH}\" -o \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXFileReference section */
+		6C20CE09285C8A530040176B /* CoreImageCustomFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreImageCustomFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C20CE0C285C8A530040176B /* CoreImageCustomFilterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImageCustomFilterApp.swift; sourceTree = "<group>"; };
+		6C20CE0E285C8A530040176B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6C20CE10285C8A540040176B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6C20CE13285C8A540040176B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6C20CE1D285C8B920040176B /* Painting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Painting.swift; sourceTree = "<group>"; };
+		6C20CE1F285C8BCC0040176B /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		6C20CE21285C8C430040176B /* paintings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = paintings.json; sourceTree = "<group>"; };
+		6C20CE23285C8CA10040176B /* FilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListView.swift; sourceTree = "<group>"; };
+		6C20CE25285C8CD60040176B /* FilterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDetailView.swift; sourceTree = "<group>"; };
+		6C20CE27285C8CDE0040176B /* PaintingWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingWall.swift; sourceTree = "<group>"; };
+		6C20CE29286010C60040176B /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
+		6C20CE3328601F150040176B /* ColorFilterKernel.ci.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ColorFilterKernel.ci.metal; sourceTree = "<group>"; };
+		6C20CE3528601FBE0040176B /* ColorFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFilter.swift; sourceTree = "<group>"; };
+		6C20CE37286023050040176B /* WarpFilterKernel.ci.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = WarpFilterKernel.ci.metal; sourceTree = "<group>"; };
+		6C20CE39286023E40040176B /* WarpFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarpFilter.swift; sourceTree = "<group>"; };
+		6C20CE3B286025A30040176B /* BlendFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendFilter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C20CE06285C8A530040176B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C20CE00285C8A530040176B = {
+			isa = PBXGroup;
+			children = (
+				6C20CE0B285C8A530040176B /* CoreImageCustomFilter */,
+				6C20CE0A285C8A530040176B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C20CE0A285C8A530040176B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C20CE09285C8A530040176B /* CoreImageCustomFilter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C20CE0B285C8A530040176B /* CoreImageCustomFilter */ = {
+			isa = PBXGroup;
+			children = (
+				6C20CE29286010C60040176B /* ImageProcessor.swift */,
+				6C20CE1C285C8B460040176B /* Views */,
+				6C20CE1B285C8B3D0040176B /* Filters */,
+				6C20CE1A285C8B350040176B /* Model */,
+				6C20CE0C285C8A530040176B /* CoreImageCustomFilterApp.swift */,
+				6C20CE10285C8A540040176B /* Assets.xcassets */,
+				6C20CE12285C8A540040176B /* Preview Content */,
+			);
+			path = CoreImageCustomFilter;
+			sourceTree = "<group>";
+		};
+		6C20CE12285C8A540040176B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6C20CE13285C8A540040176B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6C20CE1A285C8B350040176B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C20CE21285C8C430040176B /* paintings.json */,
+				6C20CE1D285C8B920040176B /* Painting.swift */,
+				6C20CE1F285C8BCC0040176B /* Gallery.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6C20CE1B285C8B3D0040176B /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				6C20CE3328601F150040176B /* ColorFilterKernel.ci.metal */,
+				6C20CE3528601FBE0040176B /* ColorFilter.swift */,
+				6C20CE37286023050040176B /* WarpFilterKernel.ci.metal */,
+				6C20CE39286023E40040176B /* WarpFilter.swift */,
+				6C20CE3B286025A30040176B /* BlendFilter.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		6C20CE1C285C8B460040176B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6C20CE0E285C8A530040176B /* ContentView.swift */,
+				6C20CE23285C8CA10040176B /* FilterListView.swift */,
+				6C20CE25285C8CD60040176B /* FilterDetailView.swift */,
+				6C20CE27285C8CDE0040176B /* PaintingWall.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6C20CE08285C8A530040176B /* CoreImageCustomFilter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C20CE17285C8A540040176B /* Build configuration list for PBXNativeTarget "CoreImageCustomFilter" */;
+			buildPhases = (
+				6C20CE05285C8A530040176B /* Sources */,
+				6C20CE06285C8A530040176B /* Frameworks */,
+				6C20CE07285C8A530040176B /* Resources */,
+			);
+			buildRules = (
+				6C20CE3228601B0A0040176B /* PBXBuildRule */,
+				6C20CE3128601AC80040176B /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = CoreImageCustomFilter;
+			productName = CoreImageCustomFilter;
+			productReference = 6C20CE09285C8A530040176B /* CoreImageCustomFilter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C20CE01285C8A530040176B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					6C20CE08285C8A530040176B = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 6C20CE04285C8A530040176B /* Build configuration list for PBXProject "CoreImageCustomFilter" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6C20CE00285C8A530040176B;
+			productRefGroup = 6C20CE0A285C8A530040176B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C20CE08285C8A530040176B /* CoreImageCustomFilter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C20CE07285C8A530040176B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C20CE14285C8A540040176B /* Preview Assets.xcassets in Resources */,
+				6C20CE11285C8A540040176B /* Assets.xcassets in Resources */,
+				6C20CE22285C8C430040176B /* paintings.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C20CE05285C8A530040176B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C20CE38286023050040176B /* WarpFilterKernel.ci.metal in Sources */,
+				6C20CE20285C8BCC0040176B /* Gallery.swift in Sources */,
+				6C20CE3628601FBE0040176B /* ColorFilter.swift in Sources */,
+				6C20CE24285C8CA10040176B /* FilterListView.swift in Sources */,
+				6C20CE2A286010C60040176B /* ImageProcessor.swift in Sources */,
+				6C20CE1E285C8B920040176B /* Painting.swift in Sources */,
+				6C20CE28285C8CDE0040176B /* PaintingWall.swift in Sources */,
+				6C20CE3428601F150040176B /* ColorFilterKernel.ci.metal in Sources */,
+				6C20CE26285C8CD60040176B /* FilterDetailView.swift in Sources */,
+				6C20CE3C286025A30040176B /* BlendFilter.swift in Sources */,
+				6C20CE0F285C8A530040176B /* ContentView.swift in Sources */,
+				6C20CE0D285C8A530040176B /* CoreImageCustomFilterApp.swift in Sources */,
+				6C20CE3A286023E40040176B /* WarpFilter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6C20CE15285C8A540040176B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6C20CE16285C8A540040176B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6C20CE18285C8A540040176B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CoreImageCustomFilter/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peak.CoreImageCustomFilter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6C20CE19285C8A540040176B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CoreImageCustomFilter/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peak.CoreImageCustomFilter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C20CE04285C8A530040176B /* Build configuration list for PBXProject "CoreImageCustomFilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C20CE15285C8A540040176B /* Debug */,
+				6C20CE16285C8A540040176B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C20CE17285C8A540040176B /* Build configuration list for PBXNativeTarget "CoreImageCustomFilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C20CE18285C8A540040176B /* Debug */,
+				6C20CE19285C8A540040176B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6C20CE01285C8A530040176B /* Project object */;
+}
