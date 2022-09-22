@@ -22,6 +22,8 @@ practice demos
 
 ### SwiftUI
 
+[MenuBarApp](./iOS/SwiftUI/MenuBarApp)
+
 [Memorize](./iOS/Memorize)
 
 [Redund Demo](./iOS/SwiftUI/MyRefund)
