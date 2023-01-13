@@ -14,14 +14,28 @@ struct ProductListView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            HStack {
-                Text("Product List")
-                    .bold()
-                    .font(.title2)
-
-                Spacer()
+            if store.isRequestingProduct {
+                HStack(alignment: .center) {
+                    Text("Loading ... ")
+                        .font(.callout)
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
+            } else {
+                HStack(alignment: .center) {
+                    Spacer()
+                    
+                    Text("Product List")
+                        .bold()
+                        .font(.title2)
+                    
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
             }
-            .padding()
             
             List {
                 ForEach(store.consumableProducts) {product in

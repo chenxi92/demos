@@ -23,6 +23,9 @@ struct ContentView: View {
                 }
                     
         }
+        .alert(isPresented: $store.isError) {
+            Alert(title: Text(store.errorMessage), dismissButton: .default(Text("OK")))
+        }
     }
     
     @ToolbarContentBuilder
@@ -35,8 +38,8 @@ struct ContentView: View {
                     .navigationBarTitleDisplayMode(.inline)
             } label: {
                 Text("Refund")
-                    .opacity(store.purchasedTransaction.isEmpty ? 0 : 1.0)
             }
+            .disabled(store.purchasedTransaction.isEmpty)
         }
         
         ToolbarItem(placement: .navigationBarTrailing) {
@@ -47,8 +50,8 @@ struct ContentView: View {
                     .navigationBarTitleDisplayMode(.inline)
             } label: {
                 Text("History")
-                    .opacity(store.historyTransaction.isEmpty ? 0 : 1.0)
             }
+            .disabled(store.historyTransaction.isEmpty)
         }
     }
 }

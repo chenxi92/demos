@@ -19,6 +19,11 @@ class Store: ObservableObject {
     @Published private(set) var purchasedTransaction = Set<Transaction>()
     @Published private(set) var historyTransaction: [Transaction] = []
     
+    @Published public var isError: Bool = false
+    @Published private(set) var errorMessage = ""
+    
+    @Published public var isRequestingProduct: Bool = false
+    
     private var updateListenerTask: Task<Void, Error>? = nil
     
     private let productIdconfig: [String: String]
@@ -76,6 +81,8 @@ class Store: ObservableObject {
             }
         } catch {
             print("Error update history transaction: \(error)")
+            errorMessage = error.localizedDescription
+            isError = true
         }
     }
     
@@ -83,8 +90,14 @@ class Store: ObservableObject {
     
     @MainActor
     func requestProducts() async {
+        isRequestingProduct = true
         do {
             let storeProducts = try await Product.products(for: productIdconfig.keys)
+            if storeProducts.count == 0 {
+                errorMessage = "Not found products from apple"
+                isError = true
+            }
+            print("request [\(storeProducts.count)] products")
             
             for product in storeProducts {
                 switch product.type {
@@ -101,7 +114,10 @@ class Store: ObservableObject {
             }
         } catch {
             print("Failed product reqeust: \(error)")
+            errorMessage = error.localizedDescription
+            isError = true
         }
+        isRequestingProduct = false
     }
     
     // MARK: Purchase
