@@ -1,0 +1,844 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C3246D62975590200FA9861 /* CXLoginResponseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3246D42975590200FA9861 /* CXLoginResponseModel.h */; };
+		6C3246D72975590200FA9861 /* CXLoginResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3246D52975590200FA9861 /* CXLoginResponseModel.m */; };
+		6C3246D92975596500FA9861 /* CXResponseModelDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3246D82975596500FA9861 /* CXResponseModelDelegate.h */; };
+		6C3246DB2975599200FA9861 /* CXRequestModelDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3246DA2975599200FA9861 /* CXRequestModelDelegate.h */; };
+		6C3246DF29755D5800FA9861 /* CXAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3246DD29755D5800FA9861 /* CXAPI.h */; };
+		6C3246E029755D5800FA9861 /* CXAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3246DE29755D5800FA9861 /* CXAPI.m */; };
+		6C3246E329755D7C00FA9861 /* CXAPI+Login.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3246E129755D7C00FA9861 /* CXAPI+Login.h */; };
+		6C3246E429755D7C00FA9861 /* CXAPI+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3246E229755D7C00FA9861 /* CXAPI+Login.m */; };
+		6CC17A272975425600B26CD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A262975425600B26CD4 /* AppDelegate.m */; };
+		6CC17A2A2975425600B26CD4 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A292975425600B26CD4 /* SceneDelegate.m */; };
+		6CC17A2D2975425600B26CD4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A2C2975425600B26CD4 /* ViewController.m */; };
+		6CC17A302975425600B26CD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CC17A2E2975425600B26CD4 /* Main.storyboard */; };
+		6CC17A322975425800B26CD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CC17A312975425800B26CD4 /* Assets.xcassets */; };
+		6CC17A352975425800B26CD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CC17A332975425800B26CD4 /* LaunchScreen.storyboard */; };
+		6CC17A382975425800B26CD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A372975425800B26CD4 /* main.m */; };
+		6CC17A462975426F00B26CD4 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A452975426F00B26CD4 /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CC17A492975426F00B26CD4 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC17A432975426F00B26CD4 /* Networking.framework */; };
+		6CC17A4A2975426F00B26CD4 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC17A432975426F00B26CD4 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6CC17A6A297542AA00B26CD4 /* CXRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A50297542A900B26CD4 /* CXRequest.h */; };
+		6CC17A6B297542AA00B26CD4 /* CXSessionTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A51297542A900B26CD4 /* CXSessionTask.h */; };
+		6CC17A6C297542AA00B26CD4 /* CXSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A52297542A900B26CD4 /* CXSession.h */; };
+		6CC17A6D297542AA00B26CD4 /* CXSessionTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A53297542A900B26CD4 /* CXSessionTaskManager.m */; };
+		6CC17A6E297542AA00B26CD4 /* CXRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A54297542A900B26CD4 /* CXRequest.m */; };
+		6CC17A6F297542AA00B26CD4 /* CXResponseValidAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A56297542AA00B26CD4 /* CXResponseValidAdapter.h */; };
+		6CC17A70297542AA00B26CD4 /* CXRequestAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A57297542AA00B26CD4 /* CXRequestAdapter.h */; };
+		6CC17A71297542AA00B26CD4 /* CXResponseDecryptAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A58297542AA00B26CD4 /* CXResponseDecryptAdapter.h */; };
+		6CC17A72297542AA00B26CD4 /* CXRequestJsonParameterAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A59297542AA00B26CD4 /* CXRequestJsonParameterAdapter.h */; };
+		6CC17A73297542AA00B26CD4 /* CXRequestAuthenticationAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A5A297542AA00B26CD4 /* CXRequestAuthenticationAdapter.m */; };
+		6CC17A74297542AA00B26CD4 /* CXRequestHTTPMethodAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A5B297542AA00B26CD4 /* CXRequestHTTPMethodAdapter.h */; };
+		6CC17A75297542AA00B26CD4 /* CXRequestContentTypeAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A5C297542AA00B26CD4 /* CXRequestContentTypeAdapter.h */; };
+		6CC17A76297542AA00B26CD4 /* CXRequestJsonParameterEncryptAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A5D297542AA00B26CD4 /* CXRequestJsonParameterEncryptAdapter.h */; };
+		6CC17A77297542AA00B26CD4 /* CXResponseDecryptAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A5E297542AA00B26CD4 /* CXResponseDecryptAdapter.m */; };
+		6CC17A78297542AA00B26CD4 /* CXResponseValidAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A5F297542AA00B26CD4 /* CXResponseValidAdapter.m */; };
+		6CC17A79297542AA00B26CD4 /* CXRequestHTTPMethodAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A60297542AA00B26CD4 /* CXRequestHTTPMethodAdapter.m */; };
+		6CC17A7A297542AA00B26CD4 /* CXRequestAuthenticationAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A61297542AA00B26CD4 /* CXRequestAuthenticationAdapter.h */; };
+		6CC17A7B297542AA00B26CD4 /* CXRequestJsonParameterAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A62297542AA00B26CD4 /* CXRequestJsonParameterAdapter.m */; };
+		6CC17A7C297542AA00B26CD4 /* CXResponseAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A63297542AA00B26CD4 /* CXResponseAdapter.h */; };
+		6CC17A7D297542AA00B26CD4 /* CXRequestJsonParameterEncryptAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A64297542AA00B26CD4 /* CXRequestJsonParameterEncryptAdapter.m */; };
+		6CC17A7E297542AA00B26CD4 /* CXRequestContentTypeAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A65297542AA00B26CD4 /* CXRequestContentTypeAdapter.m */; };
+		6CC17A7F297542AA00B26CD4 /* CXSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A66297542AA00B26CD4 /* CXSession.m */; };
+		6CC17A80297542AA00B26CD4 /* CXSessionTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A67297542AA00B26CD4 /* CXSessionTask.m */; };
+		6CC17A81297542AA00B26CD4 /* CXSessionTaskManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A68297542AA00B26CD4 /* CXSessionTaskManager.h */; };
+		6CC17A89297542CF00B26CD4 /* NetworkingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A88297542CF00B26CD4 /* NetworkingTest.m */; };
+		6CC17A8A297542CF00B26CD4 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC17A432975426F00B26CD4 /* Networking.framework */; platformFilter = ios; };
+		6CC17A9C297544FD00B26CD4 /* NSString+URL.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17A9A297544FD00B26CD4 /* NSString+URL.h */; };
+		6CC17A9D297544FD00B26CD4 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17A9B297544FD00B26CD4 /* NSString+URL.m */; };
+		6CC17AA22975549200B26CD4 /* CXLoginRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17AA02975549200B26CD4 /* CXLoginRequest.h */; };
+		6CC17AA32975549200B26CD4 /* CXLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17AA12975549200B26CD4 /* CXLoginRequest.m */; };
+		6CC17AA6297554A800B26CD4 /* CXLoginRequestModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC17AA4297554A800B26CD4 /* CXLoginRequestModel.h */; };
+		6CC17AA7297554A800B26CD4 /* CXLoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC17AA5297554A800B26CD4 /* CXLoginRequestModel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6CC17A472975426F00B26CD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CC17A1A2975425600B26CD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CC17A422975426F00B26CD4;
+			remoteInfo = Networking;
+		};
+		6CC17A8B297542CF00B26CD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CC17A1A2975425600B26CD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CC17A422975426F00B26CD4;
+			remoteInfo = Networking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6CC17A4E2975426F00B26CD4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6CC17A4A2975426F00B26CD4 /* Networking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6C3246D42975590200FA9861 /* CXLoginResponseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLoginResponseModel.h; sourceTree = "<group>"; };
+		6C3246D52975590200FA9861 /* CXLoginResponseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLoginResponseModel.m; sourceTree = "<group>"; };
+		6C3246D82975596500FA9861 /* CXResponseModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXResponseModelDelegate.h; sourceTree = "<group>"; };
+		6C3246DA2975599200FA9861 /* CXRequestModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXRequestModelDelegate.h; sourceTree = "<group>"; };
+		6C3246DD29755D5800FA9861 /* CXAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXAPI.h; sourceTree = "<group>"; };
+		6C3246DE29755D5800FA9861 /* CXAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXAPI.m; sourceTree = "<group>"; };
+		6C3246E129755D7C00FA9861 /* CXAPI+Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CXAPI+Login.h"; sourceTree = "<group>"; };
+		6C3246E229755D7C00FA9861 /* CXAPI+Login.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CXAPI+Login.m"; sourceTree = "<group>"; };
+		6CC17A222975425600B26CD4 /* iOSRequestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSRequestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CC17A252975425600B26CD4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6CC17A262975425600B26CD4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6CC17A282975425600B26CD4 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		6CC17A292975425600B26CD4 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		6CC17A2B2975425600B26CD4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6CC17A2C2975425600B26CD4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6CC17A2F2975425600B26CD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6CC17A312975425800B26CD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6CC17A342975425800B26CD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6CC17A362975425800B26CD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CC17A372975425800B26CD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6CC17A432975426F00B26CD4 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CC17A452975426F00B26CD4 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
+		6CC17A50297542A900B26CD4 /* CXRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXRequest.h; sourceTree = "<group>"; };
+		6CC17A51297542A900B26CD4 /* CXSessionTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSessionTask.h; sourceTree = "<group>"; };
+		6CC17A52297542A900B26CD4 /* CXSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSession.h; sourceTree = "<group>"; };
+		6CC17A53297542A900B26CD4 /* CXSessionTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSessionTaskManager.m; sourceTree = "<group>"; };
+		6CC17A54297542A900B26CD4 /* CXRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXRequest.m; sourceTree = "<group>"; };
+		6CC17A56297542AA00B26CD4 /* CXResponseValidAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXResponseValidAdapter.h; sourceTree = "<group>"; };
+		6CC17A57297542AA00B26CD4 /* CXRequestAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXRequestAdapter.h; sourceTree = "<group>"; };
+		6CC17A58297542AA00B26CD4 /* CXResponseDecryptAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXResponseDecryptAdapter.h; sourceTree = "<group>"; };
+		6CC17A59297542AA00B26CD4 /* CXRequestJsonParameterAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXRequestJsonParameterAdapter.h; sourceTree = "<group>"; };
+		6CC17A5A297542AA00B26CD4 /* CXRequestAuthenticationAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXRequestAuthenticationAdapter.m; sourceTree = "<group>"; };
+		6CC17A5B297542AA00B26CD4 /* CXRequestHTTPMethodAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXRequestHTTPMethodAdapter.h; sourceTree = "<group>"; };
+		6CC17A5C297542AA00B26CD4 /* CXRequestContentTypeAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXRequestContentTypeAdapter.h; sourceTree = "<group>"; };
+		6CC17A5D297542AA00B26CD4 /* CXRequestJsonParameterEncryptAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXRequestJsonParameterEncryptAdapter.h; sourceTree = "<group>"; };
+		6CC17A5E297542AA00B26CD4 /* CXResponseDecryptAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXResponseDecryptAdapter.m; sourceTree = "<group>"; };
+		6CC17A5F297542AA00B26CD4 /* CXResponseValidAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXResponseValidAdapter.m; sourceTree = "<group>"; };
+		6CC17A60297542AA00B26CD4 /* CXRequestHTTPMethodAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXRequestHTTPMethodAdapter.m; sourceTree = "<group>"; };
+		6CC17A61297542AA00B26CD4 /* CXRequestAuthenticationAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXRequestAuthenticationAdapter.h; sourceTree = "<group>"; };
+		6CC17A62297542AA00B26CD4 /* CXRequestJsonParameterAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXRequestJsonParameterAdapter.m; sourceTree = "<group>"; };
+		6CC17A63297542AA00B26CD4 /* CXResponseAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXResponseAdapter.h; sourceTree = "<group>"; };
+		6CC17A64297542AA00B26CD4 /* CXRequestJsonParameterEncryptAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXRequestJsonParameterEncryptAdapter.m; sourceTree = "<group>"; };
+		6CC17A65297542AA00B26CD4 /* CXRequestContentTypeAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXRequestContentTypeAdapter.m; sourceTree = "<group>"; };
+		6CC17A66297542AA00B26CD4 /* CXSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSession.m; sourceTree = "<group>"; };
+		6CC17A67297542AA00B26CD4 /* CXSessionTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSessionTask.m; sourceTree = "<group>"; };
+		6CC17A68297542AA00B26CD4 /* CXSessionTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSessionTaskManager.h; sourceTree = "<group>"; };
+		6CC17A86297542CF00B26CD4 /* NetworkingTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CC17A88297542CF00B26CD4 /* NetworkingTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingTest.m; sourceTree = "<group>"; };
+		6CC17A9A297544FD00B26CD4 /* NSString+URL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+URL.h"; sourceTree = "<group>"; };
+		6CC17A9B297544FD00B26CD4 /* NSString+URL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
+		6CC17AA02975549200B26CD4 /* CXLoginRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLoginRequest.h; sourceTree = "<group>"; };
+		6CC17AA12975549200B26CD4 /* CXLoginRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLoginRequest.m; sourceTree = "<group>"; };
+		6CC17AA4297554A800B26CD4 /* CXLoginRequestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLoginRequestModel.h; sourceTree = "<group>"; };
+		6CC17AA5297554A800B26CD4 /* CXLoginRequestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLoginRequestModel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6CC17A1F2975425600B26CD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CC17A492975426F00B26CD4 /* Networking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CC17A402975426F00B26CD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CC17A83297542CF00B26CD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CC17A8A297542CF00B26CD4 /* Networking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C3246DC29755AF800FA9861 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6C3246E129755D7C00FA9861 /* CXAPI+Login.h */,
+				6C3246E229755D7C00FA9861 /* CXAPI+Login.m */,
+				6CC17AA02975549200B26CD4 /* CXLoginRequest.h */,
+				6CC17AA12975549200B26CD4 /* CXLoginRequest.m */,
+				6CC17AA4297554A800B26CD4 /* CXLoginRequestModel.h */,
+				6CC17AA5297554A800B26CD4 /* CXLoginRequestModel.m */,
+				6C3246D42975590200FA9861 /* CXLoginResponseModel.h */,
+				6C3246D52975590200FA9861 /* CXLoginResponseModel.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6CC17A192975425600B26CD4 = {
+			isa = PBXGroup;
+			children = (
+				6CC17A242975425600B26CD4 /* iOSRequestDemo */,
+				6CC17A442975426F00B26CD4 /* Networking */,
+				6CC17A87297542CF00B26CD4 /* NetworkingTest */,
+				6CC17A232975425600B26CD4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6CC17A232975425600B26CD4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6CC17A222975425600B26CD4 /* iOSRequestDemo.app */,
+				6CC17A432975426F00B26CD4 /* Networking.framework */,
+				6CC17A86297542CF00B26CD4 /* NetworkingTest.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6CC17A242975425600B26CD4 /* iOSRequestDemo */ = {
+			isa = PBXGroup;
+			children = (
+				6CC17A252975425600B26CD4 /* AppDelegate.h */,
+				6CC17A262975425600B26CD4 /* AppDelegate.m */,
+				6CC17A282975425600B26CD4 /* SceneDelegate.h */,
+				6CC17A292975425600B26CD4 /* SceneDelegate.m */,
+				6CC17A2B2975425600B26CD4 /* ViewController.h */,
+				6CC17A2C2975425600B26CD4 /* ViewController.m */,
+				6CC17A2E2975425600B26CD4 /* Main.storyboard */,
+				6CC17A312975425800B26CD4 /* Assets.xcassets */,
+				6CC17A332975425800B26CD4 /* LaunchScreen.storyboard */,
+				6CC17A362975425800B26CD4 /* Info.plist */,
+				6CC17A372975425800B26CD4 /* main.m */,
+			);
+			path = iOSRequestDemo;
+			sourceTree = "<group>";
+		};
+		6CC17A442975426F00B26CD4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6CC17A452975426F00B26CD4 /* Networking.h */,
+				6CC17A99297544E000B26CD4 /* Category */,
+				6CC17A69297542AA00B26CD4 /* API */,
+				6CC17A4F297542A900B26CD4 /* Client */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6CC17A4F297542A900B26CD4 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				6CC17A55297542A900B26CD4 /* adapters */,
+				6CC17A50297542A900B26CD4 /* CXRequest.h */,
+				6CC17A54297542A900B26CD4 /* CXRequest.m */,
+				6CC17A52297542A900B26CD4 /* CXSession.h */,
+				6CC17A66297542AA00B26CD4 /* CXSession.m */,
+				6CC17A51297542A900B26CD4 /* CXSessionTask.h */,
+				6CC17A67297542AA00B26CD4 /* CXSessionTask.m */,
+				6CC17A68297542AA00B26CD4 /* CXSessionTaskManager.h */,
+				6CC17A53297542A900B26CD4 /* CXSessionTaskManager.m */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		6CC17A55297542A900B26CD4 /* adapters */ = {
+			isa = PBXGroup;
+			children = (
+				6CC17A57297542AA00B26CD4 /* CXRequestAdapter.h */,
+				6CC17A61297542AA00B26CD4 /* CXRequestAuthenticationAdapter.h */,
+				6CC17A5A297542AA00B26CD4 /* CXRequestAuthenticationAdapter.m */,
+				6CC17A5C297542AA00B26CD4 /* CXRequestContentTypeAdapter.h */,
+				6CC17A65297542AA00B26CD4 /* CXRequestContentTypeAdapter.m */,
+				6CC17A5B297542AA00B26CD4 /* CXRequestHTTPMethodAdapter.h */,
+				6CC17A60297542AA00B26CD4 /* CXRequestHTTPMethodAdapter.m */,
+				6CC17A59297542AA00B26CD4 /* CXRequestJsonParameterAdapter.h */,
+				6CC17A62297542AA00B26CD4 /* CXRequestJsonParameterAdapter.m */,
+				6CC17A5D297542AA00B26CD4 /* CXRequestJsonParameterEncryptAdapter.h */,
+				6CC17A64297542AA00B26CD4 /* CXRequestJsonParameterEncryptAdapter.m */,
+				6CC17A63297542AA00B26CD4 /* CXResponseAdapter.h */,
+				6CC17A58297542AA00B26CD4 /* CXResponseDecryptAdapter.h */,
+				6CC17A5E297542AA00B26CD4 /* CXResponseDecryptAdapter.m */,
+				6CC17A56297542AA00B26CD4 /* CXResponseValidAdapter.h */,
+				6CC17A5F297542AA00B26CD4 /* CXResponseValidAdapter.m */,
+			);
+			path = adapters;
+			sourceTree = "<group>";
+		};
+		6CC17A69297542AA00B26CD4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6C3246DA2975599200FA9861 /* CXRequestModelDelegate.h */,
+				6C3246D82975596500FA9861 /* CXResponseModelDelegate.h */,
+				6C3246DD29755D5800FA9861 /* CXAPI.h */,
+				6C3246DE29755D5800FA9861 /* CXAPI.m */,
+				6C3246DC29755AF800FA9861 /* Login */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		6CC17A87297542CF00B26CD4 /* NetworkingTest */ = {
+			isa = PBXGroup;
+			children = (
+				6CC17A88297542CF00B26CD4 /* NetworkingTest.m */,
+			);
+			path = NetworkingTest;
+			sourceTree = "<group>";
+		};
+		6CC17A99297544E000B26CD4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6CC17A9A297544FD00B26CD4 /* NSString+URL.h */,
+				6CC17A9B297544FD00B26CD4 /* NSString+URL.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6CC17A3E2975426F00B26CD4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CC17A74297542AA00B26CD4 /* CXRequestHTTPMethodAdapter.h in Headers */,
+				6CC17A81297542AA00B26CD4 /* CXSessionTaskManager.h in Headers */,
+				6CC17A71297542AA00B26CD4 /* CXResponseDecryptAdapter.h in Headers */,
+				6CC17A6C297542AA00B26CD4 /* CXSession.h in Headers */,
+				6C3246E329755D7C00FA9861 /* CXAPI+Login.h in Headers */,
+				6CC17A75297542AA00B26CD4 /* CXRequestContentTypeAdapter.h in Headers */,
+				6CC17A6B297542AA00B26CD4 /* CXSessionTask.h in Headers */,
+				6CC17A462975426F00B26CD4 /* Networking.h in Headers */,
+				6CC17A70297542AA00B26CD4 /* CXRequestAdapter.h in Headers */,
+				6CC17A72297542AA00B26CD4 /* CXRequestJsonParameterAdapter.h in Headers */,
+				6C3246D62975590200FA9861 /* CXLoginResponseModel.h in Headers */,
+				6CC17AA6297554A800B26CD4 /* CXLoginRequestModel.h in Headers */,
+				6CC17A6F297542AA00B26CD4 /* CXResponseValidAdapter.h in Headers */,
+				6C3246D92975596500FA9861 /* CXResponseModelDelegate.h in Headers */,
+				6C3246DB2975599200FA9861 /* CXRequestModelDelegate.h in Headers */,
+				6CC17A7C297542AA00B26CD4 /* CXResponseAdapter.h in Headers */,
+				6C3246DF29755D5800FA9861 /* CXAPI.h in Headers */,
+				6CC17A6A297542AA00B26CD4 /* CXRequest.h in Headers */,
+				6CC17A9C297544FD00B26CD4 /* NSString+URL.h in Headers */,
+				6CC17AA22975549200B26CD4 /* CXLoginRequest.h in Headers */,
+				6CC17A7A297542AA00B26CD4 /* CXRequestAuthenticationAdapter.h in Headers */,
+				6CC17A76297542AA00B26CD4 /* CXRequestJsonParameterEncryptAdapter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6CC17A212975425600B26CD4 /* iOSRequestDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CC17A3B2975425800B26CD4 /* Build configuration list for PBXNativeTarget "iOSRequestDemo" */;
+			buildPhases = (
+				6CC17A1E2975425600B26CD4 /* Sources */,
+				6CC17A1F2975425600B26CD4 /* Frameworks */,
+				6CC17A202975425600B26CD4 /* Resources */,
+				6CC17A4E2975426F00B26CD4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6CC17A482975426F00B26CD4 /* PBXTargetDependency */,
+			);
+			name = iOSRequestDemo;
+			productName = iOSRequestDemo;
+			productReference = 6CC17A222975425600B26CD4 /* iOSRequestDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6CC17A422975426F00B26CD4 /* Networking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CC17A4B2975426F00B26CD4 /* Build configuration list for PBXNativeTarget "Networking" */;
+			buildPhases = (
+				6CC17A3E2975426F00B26CD4 /* Headers */,
+				6CC17A3F2975426F00B26CD4 /* Sources */,
+				6CC17A402975426F00B26CD4 /* Frameworks */,
+				6CC17A412975426F00B26CD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Networking;
+			productName = Networking;
+			productReference = 6CC17A432975426F00B26CD4 /* Networking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6CC17A85297542CF00B26CD4 /* NetworkingTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CC17A8D297542CF00B26CD4 /* Build configuration list for PBXNativeTarget "NetworkingTest" */;
+			buildPhases = (
+				6CC17A82297542CF00B26CD4 /* Sources */,
+				6CC17A83297542CF00B26CD4 /* Frameworks */,
+				6CC17A84297542CF00B26CD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6CC17A8C297542CF00B26CD4 /* PBXTargetDependency */,
+			);
+			name = NetworkingTest;
+			productName = NetworkingTest;
+			productReference = 6CC17A86297542CF00B26CD4 /* NetworkingTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6CC17A1A2975425600B26CD4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					6CC17A212975425600B26CD4 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					6CC17A422975426F00B26CD4 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					6CC17A85297542CF00B26CD4 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 6CC17A1D2975425600B26CD4 /* Build configuration list for PBXProject "iOSRequestDemo" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6CC17A192975425600B26CD4;
+			productRefGroup = 6CC17A232975425600B26CD4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6CC17A212975425600B26CD4 /* iOSRequestDemo */,
+				6CC17A422975426F00B26CD4 /* Networking */,
+				6CC17A85297542CF00B26CD4 /* NetworkingTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6CC17A202975425600B26CD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CC17A352975425800B26CD4 /* LaunchScreen.storyboard in Resources */,
+				6CC17A322975425800B26CD4 /* Assets.xcassets in Resources */,
+				6CC17A302975425600B26CD4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CC17A412975426F00B26CD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CC17A84297542CF00B26CD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6CC17A1E2975425600B26CD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CC17A2D2975425600B26CD4 /* ViewController.m in Sources */,
+				6CC17A272975425600B26CD4 /* AppDelegate.m in Sources */,
+				6CC17A382975425800B26CD4 /* main.m in Sources */,
+				6CC17A2A2975425600B26CD4 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CC17A3F2975426F00B26CD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CC17A6E297542AA00B26CD4 /* CXRequest.m in Sources */,
+				6CC17A7F297542AA00B26CD4 /* CXSession.m in Sources */,
+				6CC17A79297542AA00B26CD4 /* CXRequestHTTPMethodAdapter.m in Sources */,
+				6C3246E029755D5800FA9861 /* CXAPI.m in Sources */,
+				6CC17A7E297542AA00B26CD4 /* CXRequestContentTypeAdapter.m in Sources */,
+				6CC17A6D297542AA00B26CD4 /* CXSessionTaskManager.m in Sources */,
+				6CC17AA32975549200B26CD4 /* CXLoginRequest.m in Sources */,
+				6CC17A7B297542AA00B26CD4 /* CXRequestJsonParameterAdapter.m in Sources */,
+				6CC17A73297542AA00B26CD4 /* CXRequestAuthenticationAdapter.m in Sources */,
+				6C3246E429755D7C00FA9861 /* CXAPI+Login.m in Sources */,
+				6CC17AA7297554A800B26CD4 /* CXLoginRequestModel.m in Sources */,
+				6CC17A9D297544FD00B26CD4 /* NSString+URL.m in Sources */,
+				6CC17A78297542AA00B26CD4 /* CXResponseValidAdapter.m in Sources */,
+				6CC17A7D297542AA00B26CD4 /* CXRequestJsonParameterEncryptAdapter.m in Sources */,
+				6CC17A80297542AA00B26CD4 /* CXSessionTask.m in Sources */,
+				6CC17A77297542AA00B26CD4 /* CXResponseDecryptAdapter.m in Sources */,
+				6C3246D72975590200FA9861 /* CXLoginResponseModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CC17A82297542CF00B26CD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CC17A89297542CF00B26CD4 /* NetworkingTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6CC17A482975426F00B26CD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CC17A422975426F00B26CD4 /* Networking */;
+			targetProxy = 6CC17A472975426F00B26CD4 /* PBXContainerItemProxy */;
+		};
+		6CC17A8C297542CF00B26CD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 6CC17A422975426F00B26CD4 /* Networking */;
+			targetProxy = 6CC17A8B297542CF00B26CD4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6CC17A2E2975425600B26CD4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CC17A2F2975425600B26CD4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6CC17A332975425800B26CD4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CC17A342975425800B26CD4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6CC17A392975425800B26CD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6CC17A3A2975425800B26CD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6CC17A3C2975425800B26CD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOSRequestDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenxi.iOSRequestDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6CC17A3D2975425800B26CD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOSRequestDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenxi.iOSRequestDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6CC17A4C2975426F00B26CD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenxi.Networking;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6CC17A4D2975426F00B26CD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenxi.Networking;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6CC17A8E297542CF00B26CD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenxi.NetworkingTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6CC17A8F297542CF00B26CD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenxi.NetworkingTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CC17A1D2975425600B26CD4 /* Build configuration list for PBXProject "iOSRequestDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CC17A392975425800B26CD4 /* Debug */,
+				6CC17A3A2975425800B26CD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CC17A3B2975425800B26CD4 /* Build configuration list for PBXNativeTarget "iOSRequestDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CC17A3C2975425800B26CD4 /* Debug */,
+				6CC17A3D2975425800B26CD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CC17A4B2975426F00B26CD4 /* Build configuration list for PBXNativeTarget "Networking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CC17A4C2975426F00B26CD4 /* Debug */,
+				6CC17A4D2975426F00B26CD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CC17A8D297542CF00B26CD4 /* Build configuration list for PBXNativeTarget "NetworkingTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CC17A8E297542CF00B26CD4 /* Debug */,
+				6CC17A8F297542CF00B26CD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6CC17A1A2975425600B26CD4 /* Project object */;
+}
