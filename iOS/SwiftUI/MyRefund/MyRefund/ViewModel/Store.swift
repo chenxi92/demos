@@ -7,6 +7,7 @@
 
 import Foundation
 import StoreKit
+import os
 
 public enum StoreError: Error {
     case failedVerification
@@ -28,7 +29,12 @@ class Store: ObservableObject {
     
     private let productIdconfig: [String: String]
     
+    private let logger: Logger
+    
     init() {
+        logger = Logger(subsystem: "MyRefund", category: "MyRefund")
+        
+        
         if let path = Bundle.main.path(forResource: "Products", ofType: "plist"),
            let plist = FileManager.default.contents(atPath: path) {
             productIdconfig = (try? PropertyListSerialization.propertyList(from: plist, format: nil) as? [String: String]) ?? [:]
@@ -37,8 +43,9 @@ class Store: ObservableObject {
         }
         
         consumableProducts = []
-        
         updateListenerTask = listenForTransaction()
+        
+        self.log("Store init")
         
         Task {
             // Initialize the store by starting a product request.
@@ -50,7 +57,12 @@ class Store: ObservableObject {
         }
     }
     
+    public func log(_ message: String) {
+        logger.info("\(message, privacy: .public)")
+    }
+    
     deinit {
+        log("Store deinit")
         updateListenerTask?.cancel()
     }
     
@@ -80,7 +92,7 @@ class Store: ObservableObject {
                 print(transaction)
             }
         } catch {
-            print("Error update history transaction: \(error)")
+            log("Error update history transaction: \(error.localizedDescription)")
             errorMessage = error.localizedDescription
             isError = true
         }
@@ -97,23 +109,23 @@ class Store: ObservableObject {
                 errorMessage = "Not found products from apple"
                 isError = true
             }
-            print("request [\(storeProducts.count)] products")
+            log("request [\(storeProducts.count)] products")
             
             for product in storeProducts {
                 switch product.type {
                 case .consumable:
-                    print("consumable product: \(product.debugDescription)")
+                    log("consumable product: \(product.description)")
                     consumableProducts.append(product)
                 case .nonConsumable:
-                    print("non consumable product: \(product)")
+                    log("non consumable product: \(product.description)")
                 case .autoRenewable:
-                    print("auto renewable product: \(product)")
+                    log("auto renewable product: \(product.description)")
                 default:
-                    print("Unknown product")
+                    log("Unknown product")
                 }
             }
         } catch {
-            print("Failed product reqeust: \(error)")
+            logger.error("Failed product reqeust: \(error.localizedDescription, privacy: .public)")
             errorMessage = error.localizedDescription
             isError = true
         }
@@ -123,12 +135,16 @@ class Store: ObservableObject {
     // MARK: Purchase
     
     func purchase(_ product: Product) async throws -> Transaction? {
+        log("begin purchase")
         let result = try await product.purchase()
         
         switch result {
         case .success(let verification):
+            log("purchase success, begin verify")
             let transaction = try checkVerified(verification)
-           
+            log("check verified success: \(transaction.jsonRepresentation.toString())")
+            let receipt = getAppStoreReceipt()
+            log("receipt: \(receipt)")
             await updatePurchasedTransaction(transaction)
             
             // Always finish a transaction 
@@ -136,14 +152,38 @@ class Store: ObservableObject {
             
             return transaction
         case .userCancelled:
-            print("user cancelled.")
+            log("user cancelled.")
             return nil
         case .pending:
-            print("purchase pendings")
+            log("purchase pendings")
             return nil
         default:
             return nil
         }
+    }
+    
+    /// Reference:
+    /// https://developer.apple.com/documentation/storekit/in-app_purchase/original_api_for_in-app_purchase/validating_receipts_with_the_app_store
+    /// In the sandbox environment and in StoreKit Testing in Xcode, the app receipt is present only after the tester makes the first in-app purchase.
+    private func getAppStoreReceipt() -> String {
+        guard let appStoreReceiptURL = Bundle.main.appStoreReceiptURL else {
+            return "no url"
+        }
+        log("appStoreReceiptURL: \(appStoreReceiptURL)")
+        
+        guard FileManager.default.fileExists(atPath: appStoreReceiptURL.path) else {
+            return "file not exist"
+        }
+        do {
+            log("appStoreReceiptURL path: \(appStoreReceiptURL.path)")
+            let receiptData = try Data(contentsOf: appStoreReceiptURL, options: .alwaysMapped)
+            let receiptString = receiptData.base64EncodedString(options: [])
+            log("receipt: \(receiptString)")
+            return receiptString
+        } catch {
+            log("get app store receipt occur error: \(error.localizedDescription)")
+        }
+        return "error"
     }
     
     private func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
@@ -174,23 +214,28 @@ class Store: ObservableObject {
         }
         
         do {
-            print("begin refund request: \(transaction.debugDescription)")
+            log("begin refund request: \(transaction.debugDescription)")
             
             let status = try await transaction.beginRefundRequest(in: windowScene)
             
             switch status {
             case .userCancelled:
-                print("user cancel")
+                log("user cancel")
                 return false
             case .success:
-                print("success")
+                log("success")
                 return true
             @unknown default:
                 fatalError()
             }
         } catch {
-            print("Occur error: \(error)")
+            log("Occur error: \(error.localizedDescription)")
         }
         return false
     }
+    
+}
+
+extension Data {
+    public func toString() -> String { String(decoding: self, as: UTF8.self) }
 }
