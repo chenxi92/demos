@@ -2,7 +2,17 @@
 
 practice demos
 
-### iOS
+
+
+## Java
+
+### JNI
+
+[JNI tutorial](./Java/jni/README.md)
+
+
+
+## iOS
 
 [AutoLayout](./iOS/AutoLayout)
 
@@ -33,12 +43,12 @@ practice demos
 
 
 
-#### Vapor
+### Vapor
 
 [vapor tutorial](./iOS/Swift/ToDoList)
 
 
 
-### Vue
+## Vue
 
 [slot](./Vue/slots)
