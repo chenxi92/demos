@@ -40,6 +40,8 @@ practice demos
 
 [Record Vioce](./iOS/SwiftUI/RecordVoice)
 
+[Live Activity](./iOS/SwiftUI/GroceryDeliveryApp/README.md)
+
 
 
 
