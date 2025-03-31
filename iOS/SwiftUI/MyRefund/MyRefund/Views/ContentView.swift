@@ -43,15 +43,24 @@ struct ContentView: View {
         }
         
         ToolbarItem(placement: .navigationBarTrailing) {
-            NavigationLink {
-                HistoryListView()
-                    .environmentObject(store)
-                    .navigationTitle("Transaction History")
-                    .navigationBarTitleDisplayMode(.inline)
+//            NavigationLink {
+//                HistoryListView()
+//                    .environmentObject(store)
+//                    .navigationTitle("Transaction History")
+//                    .navigationBarTitleDisplayMode(.inline)
+//            } label: {
+//                Text("History")
+//            }
+//            .disabled(store.historyTransaction.isEmpty)
+                
+            Button {
+                Task {
+                    await store.refund(transactionId: 2000000679577859)
+                }
             } label: {
-                Text("History")
+                Text("Test Refund")
             }
-            .disabled(store.historyTransaction.isEmpty)
+
         }
     }
 }

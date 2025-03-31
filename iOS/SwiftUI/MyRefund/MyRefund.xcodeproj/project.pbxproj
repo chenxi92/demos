@@ -335,6 +335,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyRefund/Preview Content\"";
 				DEVELOPMENT_TEAM = HNPPJ4UGV3;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9XJ9HHK8NJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -347,9 +348,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.karma.zombiematch3eraios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karma.mydestinygirlsios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = breakding_dead_dev_2023_01_13;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = my_destiny_girs_apple_dev_2023_3_13;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -366,6 +368,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyRefund/Preview Content\"";
 				DEVELOPMENT_TEAM = HNPPJ4UGV3;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9XJ9HHK8NJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -378,9 +381,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.karma.zombiematch3eraios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karma.mydestinygirlsios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = breakding_dead_dev_2023_01_13;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = my_destiny_girs_apple_dev_2023_3_13;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

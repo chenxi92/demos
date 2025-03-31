@@ -13,7 +13,7 @@ public enum StoreError: Error {
     case failedVerification
 }
 
-class Store: ObservableObject {
+class Store: NSObject, ObservableObject {
     
     @Published private(set) var consumableProducts: [Product]
     
@@ -31,7 +31,7 @@ class Store: ObservableObject {
     
     private let logger: Logger
     
-    init() {
+    override init() {
         logger = Logger(subsystem: "MyRefund", category: "MyRefund")
         
         
@@ -43,15 +43,21 @@ class Store: ObservableObject {
         }
         
         consumableProducts = []
+        super.init()
+        
+        self.featchData()
+    }
+    
+    private func featchData() {
         updateListenerTask = listenForTransaction()
-        
+
         self.log("Store init")
-        
+
         Task {
             // Initialize the store by starting a product request.
             await requestProducts()
         }
-        
+
         Task {
             await updateHistoryTransaction()
         }
@@ -172,6 +178,7 @@ class Store: ObservableObject {
         log("appStoreReceiptURL: \(appStoreReceiptURL)")
         
         guard FileManager.default.fileExists(atPath: appStoreReceiptURL.path) else {
+            refreshReceipt()
             return "file not exist"
         }
         do {
@@ -184,6 +191,12 @@ class Store: ObservableObject {
             log("get app store receipt occur error: \(error.localizedDescription)")
         }
         return "error"
+    }
+    
+    private func refreshReceipt() {
+        let request = SKReceiptRefreshRequest()
+        request.delegate = self
+        request.start()
     }
     
     private func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
@@ -208,6 +221,28 @@ class Store: ObservableObject {
     
     // MARK: Refund
     
+    func refund(transactionId: UInt64) async -> Bool {
+        guard let windowScene = await UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+            return false
+        }
+        do {
+            let status = try await Transaction.beginRefundRequest(for: transactionId, in: windowScene)
+            switch status {
+            case .userCancelled:
+                log("user cancel")
+                return false
+            case .success:
+                log("success")
+                return true
+            @unknown default:
+                fatalError()
+            }
+        } catch {
+            log("Occur error: \(error.localizedDescription)")
+        }
+        return true
+    }
+    
     func refund(transaction: Transaction) async -> Bool {
         guard let windowScene = await UIApplication.shared.connectedScenes.first as? UIWindowScene else {
             return false
@@ -216,8 +251,8 @@ class Store: ObservableObject {
         do {
             log("begin refund request: \(transaction.debugDescription)")
             
-            let status = try await transaction.beginRefundRequest(in: windowScene)
-            
+//            let status = try await transaction.beginRefundRequest(in: windowScene)
+            let status = try await Transaction.beginRefundRequest(for: 2000000679570979, in: windowScene)
             switch status {
             case .userCancelled:
                 log("user cancel")
@@ -233,7 +268,27 @@ class Store: ObservableObject {
         }
         return false
     }
+}
+
+extension Store: SKRequestDelegate {
     
+    func requestDidFinish(_ request: SKRequest) {
+        log("reqeust did finish")
+        guard let appStoreReceiptURL = Bundle.main.appStoreReceiptURL else {
+            log("url not exist")
+            return
+        }
+        log("appStoreReceiptURL: \(appStoreReceiptURL)")
+        
+        guard FileManager.default.fileExists(atPath: appStoreReceiptURL.path) else {
+            log("file not exist")
+            return
+        }
+    }
+    
+    func request(_ request: SKRequest, didFailWithError error: Error) {
+        log("request error: \(error)")
+    }
 }
 
 extension Data {
